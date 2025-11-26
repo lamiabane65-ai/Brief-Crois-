@@ -1,1 +1,172 @@
+/* reset léger */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: rgb(225,225,224);
+  padding: 2ch;
+  font-family: system-ui, Arial, sans-serif;
+  color: #111;
+}
+
+/* Layout principal */
+.layout {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+/* Aside fixe */
+.add-worker {
+  display: flex;
+  flex-direction: column;
+  width: 380px;
+  min-width: 300px;
+  height: calc(100vh - 4ch);
+  background-color: #f3f4f6;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+}
+.container { display:flex; flex-direction:column; gap:12px; align-items:center; }
+
+/* bouton add */
+.btn-add {
+  height: 50px;
+  width: 100%;
+  background-color: #22c55e;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* workers list */
+#workers_list { margin-top: 12px; width:100%; display:flex; flex-direction:column; gap:10px; }
+
+/* Modale (inchangé) */
+.modale { background-color: rgb(233,229,217); position: fixed; top:50%; left:50%; transform:translate(-50%,-50%); width:420px; max-height:80vh; padding:16px; border-radius:12px; box-shadow:0 8px 30px rgba(0,0,0,0.12); display:flex; flex-direction:column; gap:8px; }
+.modale.hidden { display:none; }
+.ligne { display:flex; gap:8px; align-items:center; width:100%; }
+.ligne label { width:120px; font-weight:700; font-size:14px; }
+.ligne input, .ligne select { flex:1; height:36px; border-radius:8px; border:2px solid #b2a9a9; text-align:center; }
+
+/* Plan */
+.plan {
+  flex: 1;
+  min-width: 600px;
+  height: 650px;
+  background-image: url("plan.jpg"); /* <-- remplace par ton chemin */
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  overflow: hidden;
+}
+
+/* Rooms : position en % pour être responsive */
+.room {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  user-select: none;
+}
+
+/* Labels visibles et lisibles */
+.room-label {
+  display: inline-block;
+  background: rgba(255,255,255,0.85);
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 18px;
+  color: #0a0a0a;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: center;
+  transform: translateY(0);
+  white-space: nowrap;
+}
+
+/* Positionnements recommandés (en pourcentages) */
+/* Ajuste ces valeurs si nécessaire */
+
+.conference { left: 3%;  top: 1%;  width: 34%; height: 36%; }
+.staff      { left: 3%;  top: 45%; width: 34%; height: 36%; }
+
+.server     { right: 1%; top: 3%;  width: 28%; height: 28%; }
+.security   { right: 3%; top: 34%; width: 28%; height: 34%; }
+
+.reception  { left: 39%; bottom: 3%; width: 36%; height: 38%; }
+.archive    { right: 3%; bottom: 3%; width: 28%; height: 38%; }
+
+/* + visuel au centre de chaque room (optionnel) */
+.room::after {
+  content: "+";
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-weight: 800;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+}
+
+/* Style d'un profil employé */
+.profil {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #e8e3ae;
+  padding: 10px 12px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Effet au survol */
+.profil:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+/* Photo */
+.profil img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e5e7eb;
+}
+
+/* Bloc info */
+.profil .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Nom */
+.profil .info h1 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 3px;
+}
+
+/* Rôle */
+.profil .info p {
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
 

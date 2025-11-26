@@ -1,13 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Plan + Gestion employés</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  
-    
+
+  <div class="layout">
+    <aside class="add-worker">
+      <div class="container">
+        <h1>Unassigned Staff</h1>
+        <button class="btn-add" id="button_add">+ Add New Worker</button>
+        <div id="workers_list"></div>
+      </div>
+    </aside>
+
+    <div class="plan" id="plan">
+      <div class="room conference" data-room="conference">
+        <span class="room-label">Conference Room</span>
+      </div>
+
+      <div class="room staff" data-room="staff">
+        <span class="room-label">Staff Room</span>
+      </div>
+
+      <div class="room server" data-room="server">
+        <span class="room-label">Server Room</span>
+      </div>
+
+      <div class="room security" data-room="security">
+        <span class="room-label">Security Room</span>
+      </div>
+
+      <div class="room reception" data-room="reception">
+        <span class="room-label">Reception</span>
+      </div>
+
+      <div class="room archive" data-room="archive">
+        <span class="room-label">Archive</span>
+      </div>
+    </div>
+  </div> <!-- .layout -->
+
+  <!-- MODALE -->
+  <form class="modale hidden" id="modale">
+    <div class="button">
+      <button type="button" id="remove">X</button>
+    </div>
+
+    <div class="ligne">
+      <label for="Nom">Nom :</label>
+      <input type="text" id="Nom" placeholder="Nom">
+    </div>
+
+    <div class="ligne">
+      <label for="role">Rôle :</label>
+      <select id="role" name="role">
+        <option value="Autre" selected>Autre</option>
+        <option value="Receptionniste">Réceptionniste</option>
+        <option value="Technicien IT">Technicien IT</option>
+        <option value="Agent de sécurité">Agent de sécurité</option>
+        <option value="Manager">Manager</option>
+        <option value="Nettoyage">Nettoyage</option>
+      </select>
+    </div>
+
+    <div class="ligne">
+      <label for="photo">Photo (URL) :</label>
+      <input type="text" id="photo" placeholder="https://example.com/photo.jpg">
+    </div>
+
+    <div class="ligne">
+      <label for="Email">Email :</label>
+      <input type="email" id="Email" placeholder="exemple@gmail.com">
+    </div>
+
+    <div class="ligne">
+      <label for="Telephone">Téléphone :</label>
+      <input type="tel" id="Telephone" placeholder="06********">
+    </div>
+
+    <div id="experiences-container" class="ligne">
+      <label>Expérience :</label>
+      <input type="text" name="experience[]" placeholder="Entreprise, poste, durée">
+    </div>
+
+    <button type="button" id="addExperience" class="btn-experience">+ Ajouter une expérience</button>
+
+    <button type="button" class="Submit">Submit</button>
+  </form>
+
+  <script src="script.js"></script>
 </body>
 </html>
+
