@@ -84,14 +84,62 @@
 
     <div id="experiences-container" class="ligne">
       <label>Expérience :</label>
-      <input type="text" name="experience[]" placeholder="Entreprise, poste, durée">
+      <button type="button" id="addExperience" class="btn-experience">+ Ajouter une expérience</button>
     </div>
+    <div class="experiences ligne"> 
+    <div class="ligne">
+      <label for="entreprise">Nom d'entreprise</label>
+      <input type="text" placeholder="Ex: Marjan" id="entreprise">
+    </div>
+      <div class="ligne">
+        <label for="poste">Poste</label>
+        <input type="text" placeholder=" Ex:Manager" id="poste">
+      </div>
 
-    <button type="button" id="addExperience" class="btn-experience">+ Ajouter une expérience</button>
-
-    <button type="button" class="Submit">Submit</button>
+      <div class="ligne">
+      <label for="debut">Date de debut</label>
+      <input type="date" id="debut">
+    </div>
+      <div class="ligne">
+        <label for="fin">Date de fin</label>
+        <input type="date" id="fin">
+      </div>
+        <input type="button" value="ajouter" style="padding: 5px 12px; width: 200px; font-size: 18px;">
+    </div>    
+    <button id="addExperience" type="button" class="Submit">Submit</button>
   </form>
 
+  <div class="displayProfil">
+    <button class="buttonProfil" id="removebutton">X</button>
+  <img src="" alt="" width="120px" height="120px" style="border: 2px solid ;border-radius: 50%;">
+   <div>
+    <span>Nom :</span>
+    <span>bn</span>
+   </div>
+   <div>
+    <span>Prenom :</span>
+    <span>lamia</span>
+   </div>
+   <div>
+    <span>Role :</span>
+    <span>IT</span>
+   </div>
+   <div>
+    <span>Email :</span>
+    <span>lamiabane6@gmail.com</span>
+   </div>
+   <div>
+    <span>Telephone :</span>
+    <span>08765432</span>
+   </div>
+    
+   <div class="exp">
+    <span>Expérience:</span>
+    
+   </div>
+    
+  </div>
+   
   <script src="script.js"></script>
 </body>
 </html>

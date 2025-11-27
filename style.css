@@ -169,4 +169,30 @@ body {
   font-weight: 500;
 }
 
-
+.experiences{
+  display: none;
+  flex-direction: column;
+}
+.displayProfil{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 400px;
+  background-color: #e0ddbf;
+  border-radius: 25px;
+  gap: 10px;
+  font-weight: bolder;
+}
+.buttonProfil{
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border: none;
+  border-radius: 25px;
+}
+.exp{
+  border: #0a0a0a;
+  background-color: #6b7280;
+}
